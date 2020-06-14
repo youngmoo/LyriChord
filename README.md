@@ -54,20 +54,22 @@ LyriChord format
   - The periods can be aligned with beats in the lyrics, but it isn't required.
 - In general, whitespace is ignored (spaces and empty lines), so that spaces can be used to visually align things.
   - The vertical bar `|` can also be used to indicate measure breaks, but it is ignored.
+  - Thus, the following two passages are equivalent (though the latter is likely more difficult to read):
 
 ```
 ..G          .      .G    | .   .Em    ..Em
 ..Don't know .much a.bout | .his.to-ry ..
 ```
-
-... is equivalent to ...
 ```
 ..G..G..Em..Em
 ..Don't know .much a.bout .his.to-ry ..
 ```
-(Though the latter is likely much harder to read)
+- The beginning and end of a repeated phrase can be indicated using the colon `:`, with the number of colons indicating the number of repetitions. 
 
-- The beginning and end of a repeated phrase can be indicated using the colon `:`, with the number of colons indicating the number of repititions. 
+```
+|::: .         .G       .    .G | . .D7       .        .D7  :::|
+|::: .Tweedily .deedily .dee .  | . .Tweedily .deedily .dee :::|
+```
 
 - Most ChordPro directives are supported
   - Use braces `{}` to indicate directives and meta-data.
