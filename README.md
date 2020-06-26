@@ -51,6 +51,7 @@ In designing LyriChord, I have three main objectives:
 2. Make it easy to read natively, so that a song can be learned and performed, even from the source text.
 3. Make it unambigious and machine-readable, so it can be formatted into something nicer (a la Markdown >> HTML).
     - This repo includes JavaScript code (p5.js) to parse an input file and format it into a lead sheet. [Here's a quick and dirty demo implementation.](https://www.openprocessing.org/sketch/921161/) (JavaScript is a pretty terrible language for text parsing, and I'm sure this could be done far better and more elegantly in another language.)
+        - Here's also a [variation that generates printable pages (or PDFs)](https://www.openprocessing.org/sketch/918883).
     - Hopefully, this will also enable other applications, such as integration with apps for live music performance and [Music IR research](https://www.ismir.net).
     - For example, I made a simple [web app musical instrument (for phones)](https://bit.ly/tedxsong) for audiences to "play along" with a live performance, guided by visual cues. I made another web app (in p5.js) that now uses LyriChord [to generate those visual cues](https://www.openprocessing.org/sketch/876713).
 
