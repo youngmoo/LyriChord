@@ -11,7 +11,18 @@ LyriChord is also inspired by other text-based music formats. Rather than tradit
 [C]Make a [G/B]little [F/A]birdhouse [F]in your [Eb]soul
 ```
 
-It takes some mental effort to extract the lyrics from the chords, especially when chord changes fall in the middle of a word. This makes it difficult to read and, particularly, perform from this format (I realize that's not necessarily the intention of ChordPro, but my goal is something that is natively human-readable). Here's the same passage in LyriChord:
+It takes some mental effort to extract the lyrics from the chords, especially when chord changes fall in the middle of a word. This makes it difficult to read and, particularly, perform from this format (I realize that's not necessarily the intention of ChordPro, but my goal is something that is natively human-readable). Here's the more traditional freeform 'abc' text format, which is easier to read, but doesn't address my second major issue with most music/chord formats: they don't provide much, if anything, in terms of rhythmic cues.
+```
+C      C/E         F
+Blue canary in the outlet by the light switch
+
+C/G         F/A  G/B
+Who watches over you
+
+C      G/B    F/A       F       Eb
+Make a little birdhouse in your soul
+```
+Now, here's the same passage in LyriChord:
 
 ```
 .C       .C/E         .F             .
@@ -24,22 +35,24 @@ It takes some mental effort to extract the lyrics from the chords, especially wh
 . Make a .little .birdhouse .in your .soul
 ```
 
-Perhaps it's not beautiful, but to my eyes it's more legible. It's also easier to spot errors, and you could even perform from it, if needed. LyriChord also addresses my second major issue with many text-based music/chord formats: they don't provide much, if anything, in terms of rhythmic cues. LyriChord uses periods to provide an obvious indication of where the beats (and chords) fall, also providing a sense of when chords and syllabus are off the beat. The periods are intended to be as unobtrusive as possible, allowing you to still easily read the words, even beats fall in the middle of a word (example from *Wonderful World* by Sam Cooke):
+Perhaps it's not beautiful, but to my eyes it's legible and more informative. You could even play/perform from it, if needed, and it makes it easy to spot alignment errors. LyriChord uses periods to provide an obvious indication of where the beats (and chords) fall, also providing a sense of when chords and syllabus are off the beat. The periods are intended to be as unobtrusive as possible, allowing you to still easily read the words, even when beats fall in the middle of a word. Here's an example from a different song about a bird:
 
 ```
-..G          .      .G    .   .Em     ..Em
-..Don't know .much a.bout .his.to-ry ..
+.G/D .A7/C#     .Am7/C . .Cm .
+.All .your life .      . .   .
 
-..C          .     .C . .D .   .D
-..Don't know .much .bi.o.lo.gy .
+.G/B      .     .A7      .          .Am7/D  .D7  .G    . . .
+.You were .only .wait-ing .for this .mo-ment .to a.rise . . .
+
 ```
 
-Ultimately, in designing LyriChord, I have three main objectives:
+In designing LyriChord, I have three main objectives:
 1. Make it easy to create and edit lyric+chord sheets.
 2. Make it easy to read natively, so that a song can be learned and performed, even from the source text.
 3. Make it unambigious and machine-readable, so it can be formatted into something nicer (a la Markdown >> HTML).
+    - This repo includes JavaScript code (p5.js) to parse an input file and format it into a lead sheet. [Here's a quick and dirty demo implementation.](https://www.openprocessing.org/sketch/921161/) (JavaScript is a pretty terrible language for text parsing, and I'm sure this could be done far better and more elegantly in another language.)
     - Hopefully, this will also enable other applications, such as integration with apps for live music performance and [Music IR research](https://www.ismir.net).
-    - For example, I made a simple web app musical instrument (for phones) for audiences to "play along" with a live performance, guided by visual cues. I made another web app (in p5.js) that uses LyriChord to generate those visual cues.
+    - For example, I made a simple [web app musical instrument (for phones)](https://bit.ly/tedxsong) for audiences to "play along" with a live performance, guided by visual cues. I made another web app (in p5.js) that now uses LyriChord [to generate those visual cues](https://www.openprocessing.org/sketch/876713).
 
 LyriChord format
 ---
@@ -57,18 +70,39 @@ LyriChord format
   - Thus, the following two passages are equivalent (though the latter is likely more difficult to read):
 
 ```
-..G          .      .G    | .   .Em    ..Em
-..Don't know .much a.bout | .his.to-ry ..
+.G         .Am7            .G/B           | . . . .
+.Blackbird .singing in the .dead of night | . . . .
+
+.C          .A7/C#        .D    .B7/D#        | .Em .Cm/Eb .
+.Take these .broken wings . and .learn to fly | . . .      .
+
+.G/D .A7/C#     .Am7/C | . .Cm .
+.All .your life .      | . .   .
+
+.G/B      .     .A7       | .         .Am7/D   .D7  .|G    . . .
+.You were .only .wait-ing | .for this .mo-ment .to a.|rise . . .
 ```
 ```
-..G..G..Em..Em
-..Don't know .much a.bout .his.to-ry ..
+.G.Am7.G/B....
+.Blackbird .singing in the .dead of night....
+
+.C.A7/C#.D.B7/D#.Em.Cm/Eb.
+.Take these .broken wings . and .learn to fly....
+
+.G/D.A7/C#.Am7/C..Cm.
+.All .your life....
+
+.G/B..A7..Am7/D.D7.G...
+.You were .only .wait-ing .for this .mo-ment .to a.rise...
 ```
-- The beginning and end of a repeated phrase can be indicated using the colon `:`, with the number of colons indicating the number of *additional* repeats. In the example below, the line is played a total of *three times* (from *Rockin Robin*, by Leon René under the pseudonym Jimmie Thomas, as performed by Bobby Day):
+- The beginning and end of a repeated phrase can be indicated using the colon `:`, with the number of colons indicating the number of *additional* repeats. In the example below, the first line is played a total of *three times* (continuing with the bird theme... excerpt from *Rockin Robin*, by Leon René under the pseudonym Jimmie Thomas, as performed by Bobby Day):
 
 ```
 |:: .         .G       .    .G | . .D7       .        .D7  ::|
 |:: .Tweedily .deedily .dee .  | . .Tweedily .deedily .dee ::|
+
+.       .G.       .G | . .G     .       .G
+.Tweet, . .tweet, .  | . .tweet .tweet! . 
 ```
 
 - Most ChordPro *directives* are supported
@@ -89,4 +123,4 @@ LyriChord format
 - Unimplemented, but probably good ideas...
   - Since periods, colons, and bars are reserved characters, there should be some way to escape those (perhaps `\`) if they are part of the lyrics.
 
-This is very much a work in progress, and I welcome any and all feedback. I hope this is useful to you!
+This is very much an early draft of a work in progress, and I welcome any and all feedback. I hope this is useful to you!
