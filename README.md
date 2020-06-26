@@ -62,7 +62,7 @@ LyriChord format
   - Periods `.` indicate beats within the lyrics
   - In the example below, each line happens to be 2 bars (this could vary), with changing time signatures.
   - Lyrics and chords before the first beat (pickups) are allowed
-- Chords are presented above the lyric line using standard (C,C7,C7/E,Cm,Cm7,etc.) text chord labels
+- Chords are presented above the lyric line using standard `abc (C,C7,C7/E,Cm,Cm7,etc.)` text chord labels
   - Again, periods `.` indicate beat locations, which must match the number of beats in the lyric line
   - The periods can be aligned with beats in the lyrics, but it isn't required.
   - (In the future, we may consider not requiring empty beats at the end of a line, when no lyric or chord changes are indicated.)
