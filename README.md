@@ -59,7 +59,7 @@ LyriChord format
 
 - Each line of lyrics should be aligned with whole measures (bars) of a song
   - Periods `.` indicate beats within the lyrics
-  - In the example below, the line is 2 bars (8 beats in 4/4 time)...
+  - In the example below, each line happens to be 2 bars (this could vary), with changing time signatures.
   - Lyrics and chords before the first beat (pickups) are allowed
 - Chords are presented above the lyric line using standard (C,C7,C7/E,Cm,Cm7,etc.) text chord labels
   - Again, periods `.` indicate beat locations, which must match the number of beats in the lyric line
