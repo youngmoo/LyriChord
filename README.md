@@ -105,7 +105,7 @@ LyriChord format
 .Tweet, . .tweet, .  | . .tweet .tweet! . 
 ```
 
-- Most ChordPro *directives* are supported
+- Most [*ChordPro directives*](https://www.chordpro.org/chordpro/ChordPro-Directives.html) are supported
   - Use braces `{}` to indicate directives
   - Markers, comments, and meta-data can also be included within brackets
 ```
