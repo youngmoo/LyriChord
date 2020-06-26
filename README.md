@@ -41,7 +41,7 @@ Perhaps it's not beautiful, but to my eyes it's legible and more informative. Yo
 .G/D .A7/C#     .Am7/C . .Cm .
 .All .your life .      . .   .
 
-.G/B      .     .A7      .          .Am7/D  .D7  .G    . . .
+.G/B      .     .A7      .          .Am7/D  .D7  .G     . . .
 .You were .only .wait-ing .for this .mo-ment .to a.rise . . .
 
 ```
